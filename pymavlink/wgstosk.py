@@ -33,35 +33,35 @@ class WGSPoint:
 			self.lon = float(0)
 			self.alt = float(0)
 			
-		self.ro = 206264.8062 'число угловых секунд в радиане'
+		self.ro = 206264.8062 'number of angle seconds in radian'
 		
-		' Эллипсоид Красовского '
-		self.aP = 6378245 'большая полуось'
-		self.alP = 1 / 298.3 'сжатие'
-		self.e2P = 2 * self.alP - self.alP ^ 2 'Квадрат эксцентриситета'
+		' Krasovsky elipsoid '
+		self.aP = 6378245 
+		self.alP = 1 / 298.3 
+		self.e2P = 2 * self.alP - self.alP ^ 2 
 		
-		' Эллипсоид WGS84'
-		self.aW = 6378137 'большая полуось'
-		self.alW = 1 / 298.257223563 'сжатие'
-		self.e2W = 2 * alW - alW ^ 2 'Квадрат эксцентриситета'
+		' WGS84 Elipsoid'
+		self.aW = 6378137 
+		self.alW = 1 / 298.257223563 
+		self.e2W = 2 * alW - alW ^ 2 
 		
-		' Вспомогательные значения для преобразования эллипсоидов '
+		' Nubmbers for elipsoid transformation '
 		self.a = (self.aP + self.aW) / 2 
 		self.e2 = (self.e2P + self.e2W) / 2
 		self.da = self.aW - self.aP
 		self.de2 = self.e2W - self.e2P
 		
-		' Линейные элементы трансформирования, в метрах '
+		' Linear elements of transformation in meters '
 		self.dx = 23.92
 		self.dy = -141.27
 		self.dz = -80.9
 		
-		' Угловые элементы трансформирования, в секундах '
+		' Angular elemnts of transformation in seconds '
 		self.wx = 0
 		self.wy = 0
 		self.wz = 0
 		
-		' Дифференциальное различие масштабов '
+		'Rate diff'
 		self.ms = 0
 		
 	def WGS84_SK42_Lat(self, Bd, Ld, H):
