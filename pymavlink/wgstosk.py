@@ -86,7 +86,7 @@ class WGSPoint:
 		return dL
 		
 	def WGS84_SK42(self, self.lat, self.lon, self.alt):
-		WGS84_lat = WGS84_SK42_Lat(self.lat, self.lon, self.alt)
-		WGS84_lon = WGS84_SK42_Long(self.lat, self.lon, self.alt)
-		return (WGS84_lat, WGS84_lon)
+		SK42_lat = WGS84_SK42_Lat(self.lat, self.lon, self.alt)
+		SK42_lon = WGS84_SK42_Long(self.lat, self.lon, self.alt)
+		return (SK42_lat, SK42_lon)
 		
