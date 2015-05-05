@@ -85,7 +85,7 @@ class WGSPoint:
     	dL = self.ro / ((N + H) * cos(B)) * (-self.dx * sin(L) + self.dy * cos(L)) + tan(B) * (1 - self.e2) * (self.wx * cos(L) + self.wy * sin(L)) - self.wz
 		return dL
 		
-	def WGS84_SK42(self, self.lat, self.lon, self.alt):
+	def WGS84_SK42(self):
 		SK42_lat = WGS84_SK42_Lat(self.lat, self.lon, self.alt)
 		SK42_lon = WGS84_SK42_Long(self.lat, self.lon, self.alt)
 		return (SK42_lat, SK42_lon)
